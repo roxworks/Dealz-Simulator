@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dealz Simulator.CSharp.Plugins", "Dealz Simulator.CSharp.Plugins.csproj", "{E7DE128F-536A-463E-B5A8-848B82E3BA04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dealz Simulator.CSharp.Editor", "Dealz Simulator.CSharp.Editor.csproj", "{E5AE657C-1596-07A8-654C-4E50FE979BA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7DE128F-536A-463E-B5A8-848B82E3BA04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7DE128F-536A-463E-B5A8-848B82E3BA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7DE128F-536A-463E-B5A8-848B82E3BA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7DE128F-536A-463E-B5A8-848B82E3BA04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5AE657C-1596-07A8-654C-4E50FE979BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5AE657C-1596-07A8-654C-4E50FE979BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5AE657C-1596-07A8-654C-4E50FE979BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5AE657C-1596-07A8-654C-4E50FE979BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
