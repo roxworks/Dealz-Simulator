@@ -85,6 +85,9 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -96,6 +99,10 @@
     <ProjectReference Include="Dealz Simulator.CSharp.Plugins.csproj">
       <Project>{E7DE128F-536A-463E-B5A8-848B82E3BA04}</Project>
       <Name>Dealz Simulator.CSharp.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="Dealz Simulator.CSharp.csproj">
+      <Project>{37FB8C51-76EB-8A8A-59BD-D31377A10D66}</Project>
+      <Name>Dealz Simulator.CSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
