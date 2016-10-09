@@ -6,6 +6,7 @@ public class Slot : MonoBehaviour
 
     private GameObject phone;
 
+
     private Renderer rend;
     private Color startColor;
 
@@ -29,26 +30,27 @@ public class Slot : MonoBehaviour
             Debug.Log("Can't place a phone here!");
             return;
         }
+
         GameObject phoneToBuild = Buildmanager.instance.PhoneToPlace;
 
-        if (Buildmanager.instance.CurrentMoney >= phoneToBuild.cost)
+        if (Buildmanager.instance.CurrentMoney >= Buildmanager.instance.PhoneCost)
         {
-            Buildmanager.instance.SubtractMoney(phoneToBuild.cost);
+            Buildmanager.instance.SubtractMoney(Buildmanager.instance.PhoneCost);
             phone = (GameObject)Instantiate(phoneToBuild, transform.position + positionOffset, transform.rotation);
+            phone.GetComponent<Phone>().associatedSlot = this.gameObject;
         }
         else
         {
             Debug.Log("Not enough money to build that!");
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
-        
+
     void OnMouseEnter()
     {
         rend.material.color = hoverColor;
