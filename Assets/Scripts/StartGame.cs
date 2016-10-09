@@ -7,6 +7,6 @@ public class StartGame : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene("Dealz1");
+        SceneManager.LoadScene("Dealz2");
     }
 }
