@@ -12,6 +12,7 @@ public class Buildmanager : MonoBehaviour
     public int currentMoney; //Current Money player has.
 
     public UnityEngine.UI.Text Money;
+    public int numPhones;
 
 
     /// <summary>
@@ -23,6 +24,7 @@ public class Buildmanager : MonoBehaviour
         instance = this;
         phoneToPlace = null;
         currentMoney = 20;
+        numPhones = 0;
     }
 
     // Update is called once per frame

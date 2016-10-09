@@ -32,16 +32,20 @@ public class Slot : MonoBehaviour
         }
 
         GameObject phoneToBuild = Buildmanager.instance.PhoneToPlace;
-
-        if (Buildmanager.instance.CurrentMoney >= Buildmanager.instance.PhoneCost)
+        if (phoneToBuild != null)
         {
-            Buildmanager.instance.SubtractMoney(Buildmanager.instance.PhoneCost);
-            phone = (GameObject)Instantiate(phoneToBuild, transform.position + positionOffset, transform.rotation);
-            phone.GetComponent<Phone>().associatedSlot = this.gameObject;
-        }
-        else
-        {
-            Debug.Log("Not enough money to build that!");
+            if (Buildmanager.instance.CurrentMoney >= Buildmanager.instance.PhoneCost)
+            {
+                Buildmanager.instance.SubtractMoney(Buildmanager.instance.PhoneCost);
+                phone = (GameObject)Instantiate(phoneToBuild, transform.position + positionOffset, transform.rotation);
+                phone.GetComponent<Phone>().associatedSlot = this.gameObject;
+                Buildmanager.instance.PhoneToPlace = null;
+                Buildmanager.instance.numPhones++;
+            }
+            else
+            {
+                Debug.Log("Not enough money to build that!");
+            }
         }
 
     }
