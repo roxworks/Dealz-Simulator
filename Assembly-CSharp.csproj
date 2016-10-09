@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Buildmanager.cs" />
+     <Compile Include="Assets\Scripts\Characters.cs" />
      <Compile Include="Assets\Scripts\Menus.cs" />
+     <Compile Include="Assets\Scripts\Phone.cs" />
      <Compile Include="Assets\Scripts\Slot.cs" />
      <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\TestButtonClick.cs" />
