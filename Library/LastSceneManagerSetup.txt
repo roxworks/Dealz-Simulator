@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Dealz1.unity
-=======
 - path: Assets/Scenes/Dealz2.unity
->>>>>>> aed9658f01f69c80c3490843a87433c4a4eb8757
   isLoaded: 1
   isActive: 1

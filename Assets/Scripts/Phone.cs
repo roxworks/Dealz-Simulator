@@ -13,6 +13,7 @@ public class Phone : MonoBehaviour {
     public float currencyRate = 0;      // how often phone makes money
     public float originalRate = 0;      // original rate of currencer
     public int moneyCount = 0;          // total monies
+    
 
     public double explodeChance = -1;   // chance of phone exploding
     public double crashChance = -1;     // chance of phone crashing
@@ -32,7 +33,7 @@ public class Phone : MonoBehaviour {
             {
                 // reverts to original to restart timer, and adds money
                 currencyRate = originalRate;
-                moneyCount += 1;
+                Buildmanager.instance.AddMoney(1);
 
                 int explodeGenerator = Random.Range(0, 101);    // generate a number for explodeChance
                 int crashGenerator = Random.Range(0, 101);      // for crashChance

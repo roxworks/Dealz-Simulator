@@ -26,7 +26,7 @@ public class Slot : MonoBehaviour
             return;
         }
 
-        GameObject phoneToBuild = Buildmanager.instance.GetPhoneToPlace();
+        GameObject phoneToBuild = Buildmanager.instance.PhoneToPlace;
         phone = (GameObject)Instantiate(phoneToBuild, transform.position + positionOffset, transform.rotation);
     }
 
