@@ -19,6 +19,7 @@ public class Phone : MonoBehaviour {
     public double crashChance = -1;     // chance of phone crashing
 
     public int level = -1;              // level of phone
+    public float cost = 0;              // cost of phone
     
 
 	// Update is called once per frame
@@ -33,7 +34,8 @@ public class Phone : MonoBehaviour {
             {
                 // reverts to original to restart timer, and adds money
                 currencyRate = originalRate;
-                Buildmanager.instance.AddMoney(1);
+                Buildmanager.instance.AddMoney(moneyCount);      //calls the BuildManager method, AddMoney, and runs it, inserting the parameter.
+
 
                 int explodeGenerator = Random.Range(0, 101);    // generate a number for explodeChance
                 int crashGenerator = Random.Range(0, 101);      // for crashChance

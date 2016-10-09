@@ -29,9 +29,18 @@ public class Slot : MonoBehaviour
             Debug.Log("Can't place a phone here!");
             return;
         }
-
         GameObject phoneToBuild = Buildmanager.instance.PhoneToPlace;
-        phone = (GameObject)Instantiate(phoneToBuild, transform.position + positionOffset, transform.rotation);
+
+        if (Buildmanager.instance.CurrentMoney >= phoneToBuild.cost)
+        {
+            Buildmanager.instance.SubtractMoney(phoneToBuild.cost);
+            phone = (GameObject)Instantiate(phoneToBuild, transform.position + positionOffset, transform.rotation);
+        }
+        else
+        {
+            Debug.Log("Not enough money to build that!");
+        }
+        
     }
 
     // Update is called once per frame

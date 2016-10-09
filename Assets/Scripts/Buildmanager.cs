@@ -33,6 +33,11 @@ public class Buildmanager : MonoBehaviour
     public void AddMoney(int moneyToAdd) {
         currentMoney += moneyToAdd;
     }
+    
+    public void SubtractMoney (int moneyToSubtract)
+    {
+        currentMoney -= moneyToSubtract;
+    }
 
     public int CurrentMoney {
         get { return currentMoney; }
