@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class Characters : MonoBehaviour {
-
+    private bool steven;
+    private bool guy;
+    private bool marc;
 	// Use this for initialization
 	void Start () {
 	

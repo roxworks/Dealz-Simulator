@@ -13,6 +13,9 @@ public class Buildmanager : MonoBehaviour
 
     public UnityEngine.UI.Text Money;
     public int numPhones;
+    private bool marc;
+    private bool guy;
+    private bool steven;
 
 
     /// <summary>
@@ -30,6 +33,7 @@ public class Buildmanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentMoney>1000) { }
         Money.text = CurrentMoney.ToString();
     }
 
@@ -69,5 +73,21 @@ public class Buildmanager : MonoBehaviour
         set { phoneCost = value; }
     }
 
+    public bool Marc {
+        get { return marc; }
+        set { marc = value; }
+    }
+
+    public bool Guy
+    {
+        get { return guy; }
+        set { guy = value; }
+    }
+
+    public bool Steven
+    {
+        get { return steven; }
+        set { steven = value; }
+    }
 
 }

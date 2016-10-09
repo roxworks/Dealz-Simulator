@@ -23,6 +23,8 @@ public class Phone : MonoBehaviour
     private int cost = 0;              // cost of phone
 
     public GameObject associatedSlot;
+    public Sprite defaultSprite;
+    public Sprite crashSprite;
 
     // Update is called once per frame
     virtual protected void Update()
@@ -53,6 +55,7 @@ public class Phone : MonoBehaviour
                 {
                     print(phoneName + "Gone Done Crashed");
                     functionality = false;
+                    this.GetComponent<SpriteRenderer>().sprite = crashSprite;
                 }
             }
         }
@@ -79,6 +82,7 @@ public class Phone : MonoBehaviour
         {
             functionality = true;
             Debug.Log("ALL BETTER NOW");
+            this.GetComponent<SpriteRenderer>().sprite = defaultSprite;
         }
     }
 
