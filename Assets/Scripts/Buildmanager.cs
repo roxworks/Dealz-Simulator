@@ -7,7 +7,7 @@ public class Buildmanager : MonoBehaviour
     private GameObject phoneToPlace; //Phone that will be placed
     public static Buildmanager instance; //Singleton of Buildmanager
 
-    public int currentMoney; //Current Money player has.
+    private int currentMoney; //Current Money player has.
 
 
     /// <summary>
@@ -32,6 +32,10 @@ public class Buildmanager : MonoBehaviour
     /// <param name="moneyToAdd">Amount of money to be added</param>
     public void AddMoney(int moneyToAdd) {
         currentMoney += moneyToAdd;
+    }
+
+    public int CurrentMoney {
+        get { return currentMoney; }
     }
 
     /// <summary>
