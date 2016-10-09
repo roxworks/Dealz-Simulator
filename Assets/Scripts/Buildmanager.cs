@@ -33,8 +33,17 @@ public class Buildmanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentMoney>1000) { }
-        Money.text = CurrentMoney.ToString();
+        if (currentMoney > 1000) {
+            Money.text = "win";
+        }
+        else if (currentMoney < 10 && numPhones < 1)
+        {
+            Money.text = "lose";
+        }
+        else
+        {
+            Money.text = CurrentMoney.ToString();
+        }
     }
 
     /// <summary>
@@ -48,7 +57,13 @@ public class Buildmanager : MonoBehaviour
 
     public void SubtractMoney(int moneyToSubtract)
     {
-        currentMoney -= moneyToSubtract;
+        if (marc)
+        {
+            currentMoney -= moneyToSubtract * (9 / 10);
+        }
+        else {
+            currentMoney -= moneyToSubtract;
+        }
     }
 
     public int CurrentMoney
@@ -73,21 +88,43 @@ public class Buildmanager : MonoBehaviour
         set { phoneCost = value; }
     }
 
-    public bool Marc {
+    public bool Marc
+    {
         get { return marc; }
-        set { marc = value; }
+        set
+        {
+            if (currentMoney >= 16 && !marc)
+            {
+                marc = value;
+                currentMoney-=16;
+            }
+        }
     }
 
     public bool Guy
     {
         get { return guy; }
-        set { guy = value; }
+        set
+        {
+            if (currentMoney >= 24 && !guy)
+            {
+                guy = value;
+                currentMoney-=24;
+            }
+        }
     }
 
     public bool Steven
     {
         get { return steven; }
-        set { steven = value; }
+        set
+        {
+            if (currentMoney >= 100 && !steven)
+            {
+                steven = value;
+                currentMoney-=100;
+            }
+        }
     }
 
 }

@@ -38,25 +38,56 @@ public class Phone : MonoBehaviour
             {
                 // reverts to original to restart timer, and adds money
                 currencyRate = originalRate;
-                Buildmanager.instance.AddMoney(moneyCount);      //calls the BuildManager method, AddMoney, and runs it, inserting the parameter.
+
+                if (Buildmanager.instance.Steven)
+                {
+                    Buildmanager.instance.AddMoney(moneyCount * 2); //calls the BuildManager method, AddMoney, and runs it, inserting the parameter.
+                }
+                else
+                {
+                    Buildmanager.instance.AddMoney(moneyCount);
+                }
+
 
 
                 int explodeGenerator = UnityEngine.Random.Range(0, 101);    // generate a number for explodeChance
                 int crashGenerator = UnityEngine.Random.Range(0, 101);      // for crashChance
 
-                if (explodeGenerator <= explodeChance)  // check explosion number to determine if phone ded
+                if (Buildmanager.instance.Guy)
                 {
-                    print(phoneName + "Gone Done Did Explode");
-                    Destroy(gameObject);
-                    Destroy(associatedSlot);
+                    if (explodeGenerator <= explodeChance / 2)  // check explosion number to determine if phone ded
+                    {
+                        print(phoneName + "Gone Done Did Explode");
+                        Destroy(gameObject);
+                        Destroy(associatedSlot);
+                        Buildmanager.instance.numPhones--;
+                    }
+
+                    if (crashGenerator <= crashChance / 2)
+                    {
+                        print(phoneName + "Gone Done Crashed");
+                        functionality = false;
+                        this.GetComponent<SpriteRenderer>().sprite = crashSprite;
+                    }
+                }
+                else
+                {
+                    if (explodeGenerator <= explodeChance)  // check explosion number to determine if phone ded
+                    {
+                        print(phoneName + "Gone Done Did Explode");
+                        Destroy(gameObject);
+                        Destroy(associatedSlot);
+                        Buildmanager.instance.numPhones--;
+                    }
+
+                    if (crashGenerator <= crashChance)
+                    {
+                        print(phoneName + "Gone Done Crashed");
+                        functionality = false;
+                        this.GetComponent<SpriteRenderer>().sprite = crashSprite;
+                    }
                 }
 
-                if (crashGenerator <= crashChance)
-                {
-                    print(phoneName + "Gone Done Crashed");
-                    functionality = false;
-                    this.GetComponent<SpriteRenderer>().sprite = crashSprite;
-                }
             }
         }
         else
