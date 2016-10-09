@@ -18,6 +18,10 @@ public class Slot : MonoBehaviour
         startColor = rend.material.color;
     }
 
+
+    /// <summary>
+    /// Instantiates a new phone in clicked position if possible
+    /// </summary>
     void OnMouseDown()
     {
         if (phone != null)
@@ -35,7 +39,7 @@ public class Slot : MonoBehaviour
     {
 
     }
-
+        
     void OnMouseEnter()
     {
         rend.material.color = hoverColor;
